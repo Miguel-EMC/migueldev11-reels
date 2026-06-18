@@ -5,16 +5,17 @@
   "scripts": {
     "dev": "remotion studio",
     "start": "remotion studio",
-    "render": "npx remotion render src/index.ts TipsVSCode out/tips-vscode.mp4 --codec=h264"
+    "render": "npx remotion render src/index.ts TipsVSCode out/tips-vscode.mp4 --codec=h264",
+    "render:rag1": "npx remotion render src/index.ts RagCap1 out/rag-cap1.mp4 --codec=h264"
   },
   "dependencies": {
     "@remotion/cli": "4.0.479",
-    "remotion": "4.0.479",
     "@remotion/google-fonts": "4.0.479",
     "@remotion/transitions": "4.0.479",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "zod": "3.23.8"
+    "remotion": "4.0.479",
+    "zod": "4.3.6"
   },
   "devDependencies": {
     "@remotion/eslint-config": "4.0.479",
@@ -22,5 +23,7 @@
     "@types/react-dom": "18.3.1",
     "typescript": "5.4.5"
   },
-  "remotion": { "entryPoint": "src/index.ts" }
+  "remotion": {
+    "entryPoint": "src/index.ts"
+  }
 }
