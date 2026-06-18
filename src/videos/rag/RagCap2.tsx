@@ -22,11 +22,11 @@ export const RagCap2: React.FC = () => (
   <AbsoluteFill>
     {/* Drop rag_cap2.mp3 and musica.mp3 in public/ before rendering */}
     <Audio src={staticFile("rag_cap2.mp3")} />
-    <Audio src={staticFile("musica.mp3")} volume={(f) => {
+    {/* <Audio src={staticFile("musica.mp3")} volume={(f) => {
       if (f < 60)   return (f / 60) * 0.12;
       if (f > 2394) return ((2454 - f) / 60) * 0.12;
       return 0.12;
-    }} />
+    }} /> */}
 
     {RAG_CAP2_SCENES.map((scene, i) => {
       const Comp = SCENE_COMPONENTS[i];

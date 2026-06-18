@@ -34,3 +34,15 @@ export const RAG_CAP2_SCENES = [
   { id: "detalle",    from: 1560, duration: 540 }, // 18s
   { id: "end-card",   from: 2100, duration: 354 }, // 11.79s
 ] as const;
+
+// ── Cap 3 — Embeddings (80-90s target) ───────────────────
+export const RAG_CAP3_TOTAL_FRAMES = 2700; // 90s @ 30fps
+
+export const RAG_CAP3_SCENES = [
+  { id: "gancho",     from: 0,    duration: 240 }, // 0:00-0:08 (8s)
+  { id: "el-problema",from: 240,  duration: 480 }, // 0:08-0:24 (16s)
+  { id: "que-es",     from: 720,  duration: 540 }, // 0:24-0:42 (18s)
+  { id: "la-intuicion",from: 1260, duration: 540 }, // 0:42-1:00 (18s)
+  { id: "para-que",   from: 1800, duration: 450 }, // 1:00-1:15 (15s)
+  { id: "cliffhanger",from: 2250, duration: 450 }, // 1:15-1:30 (15s)
+] as const;
