@@ -6,7 +6,8 @@
     "dev": "remotion studio",
     "start": "remotion studio",
     "render": "npx remotion render src/index.ts TipsVSCode out/tips-vscode.mp4 --codec=h264",
-    "render:rag1": "npx remotion render src/index.ts RagCap1 out/rag-cap1.mp4 --codec=h264"
+    "render:rag1": "npx remotion render src/index.ts RagCap1 out/rag-cap1.mp4 --codec=h264",
+    "render:rag2": "npx remotion render src/index.ts RagCap2 out/rag-cap2.mp4 --codec=h264"
   },
   "dependencies": {
     "@remotion/cli": "4.0.479",

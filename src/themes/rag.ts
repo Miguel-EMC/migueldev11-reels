@@ -22,3 +22,15 @@ export const RAG_SCENES = [
   { id: "por-que",     from: 1392, duration: 329 },
   { id: "cliffhanger", from: 1721, duration: 254 },
 ] as const;
+
+// ── Cap 2 — adjust durations after recording voz-cap2.mp3 ───────────────────
+export const RAG_CAP2_TOTAL_FRAMES = 2550; // 85 s @ 30 fps
+
+export const RAG_CAP2_SCENES = [
+  { id: "gancho",     from: 0,    duration: 240 },
+  { id: "problema",   from: 240,  duration: 480 },
+  { id: "chunking",   from: 720,  duration: 540 },
+  { id: "equilibrio", from: 1260, duration: 480 },
+  { id: "detalle",    from: 1740, duration: 420 },
+  { id: "end-card",   from: 2160, duration: 390 },
+] as const;
