@@ -5,21 +5,27 @@ export const Bg: React.FC<{ accent: string }> = ({ accent }) => (
   <>
     <AbsoluteFill style={{ background: "#0A0E1A" }} />
     <AbsoluteFill style={{
-      background: `radial-gradient(ellipse at 50% 35%, ${accent}22 0%, transparent 62%)`,
+      background: `radial-gradient(circle at 50% 40%, ${accent}15 0%, transparent 70%)`,
     }} />
     <svg
-      style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.055 }}
+      style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.08 }}
       viewBox="0 0 1080 1920"
     >
-      <g stroke={accent} strokeWidth="1" fill="none">
-        <path d="M0 380 H220 V280 H520" />
-        <path d="M1080 720 H860 V920 H560" />
-        <path d="M180 1920 V1680 H420 V1480 H620" />
-        <path d="M920 0 V210 H700 V420" />
-        <circle cx="220" cy="280" r="4" fill={accent} />
-        <circle cx="860" cy="920" r="4" fill={accent} />
-        <circle cx="420" cy="1480" r="4" fill={accent} />
-        <circle cx="700" cy="420" r="4" fill={accent} />
+      <g stroke={accent} strokeWidth="2" fill="none" strokeDasharray="4 8">
+        <path d="M0 400 H250 V300 H550" />
+        <path d="M1080 800 H800 V1000 H500" />
+        <path d="M200 1920 V1600 H500 V1400 H700" />
+        <path d="M900 0 V300 H600 V500" />
+        
+        {/* Decorative dots */}
+        <circle cx="250" cy="300" r="6" fill={accent} />
+        <circle cx="800" cy="1000" r="6" fill={accent} />
+        <circle cx="500" cy="1600" r="6" fill={accent} />
+        <circle cx="600" cy="300" r="6" fill={accent} />
+        
+        {/* Additional tech lines */}
+        <path d="M0 1200 L150 1350 H400" strokeOpacity="0.5" />
+        <path d="M1080 400 L930 250 H700" strokeOpacity="0.5" />
       </g>
     </svg>
   </>

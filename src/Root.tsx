@@ -1,10 +1,15 @@
 import React from "react";
 import { Composition } from "remotion";
+import { loadFont as loadInter } from "@remotion/google-fonts/Inter";
+import { loadFont as loadJetBrains } from "@remotion/google-fonts/JetBrainsMono";
 import { Main, FRAMES_PER_TIP } from "./Main";
 import { tips } from "./data/tips";
 import { RagCap1 } from "./videos/rag/RagCap1";
 import { RagCap2 } from "./videos/rag/RagCap2";
 import { RAG_TOTAL_FRAMES, RAG_CAP2_TOTAL_FRAMES } from "./themes/rag";
+
+loadInter();
+loadJetBrains();
 
 const totalFrames = tips.length * FRAMES_PER_TIP;
 

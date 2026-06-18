@@ -1,5 +1,3 @@
-// Scene 1 — GANCHO · frames 0-240
-// "EL ERROR #1 con RAG" + "darle el documento ENTERO"
 import React from "react";
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import { brand } from "../../../themes/brand";
@@ -14,80 +12,80 @@ export const Scene1Gancho: React.FC = () => {
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
 
-  const titleP = spring({ frame, fps, config: { damping: 10, stiffness: 120 }, durationInFrames: 22 });
-  const subP   = spring({ frame: frame - 30, fps, config: { damping: 14, stiffness: 90 }, durationInFrames: 20 });
-
-  const glowPulse = Math.sin(frame / 12) * 0.35 + 0.65;
+  const titleSpring = spring({ frame, fps, config: { damping: 12, stiffness: 100 } });
+  const subSpring   = spring({ frame: frame - 25, fps, config: { damping: 14, stiffness: 120 } });
+  
+  const pulse = Math.sin(frame / 10) * 0.2 + 0.8;
 
   return (
-    <AbsoluteFill style={{ opacity: fadeOpacity }}>
+    <AbsoluteFill style={{ opacity: fadeOpacity, backgroundColor: brand.bg }}>
       <Bg accent={brand.orange} />
 
       <AbsoluteFill style={{
         display: "flex", flexDirection: "column",
         alignItems: "center", justifyContent: "center",
-        gap: 28, paddingLeft: 60, paddingRight: 60,
+        gap: 40, padding: "0 60px",
       }}>
-        {/* "EL ERROR #1" — impact entrance */}
         <div style={{
           textAlign: "center",
-          opacity: interpolate(titleP, [0, 1], [0, 1]),
-          transform: `scale(${interpolate(titleP, [0, 1], [0.65, 1])})`,
+          opacity: titleSpring,
+          transform: `scale(${interpolate(titleSpring, [0, 1], [0.8, 1])}) translateY(${interpolate(titleSpring, [0, 1], [40, 0])}px)`,
         }}>
           <div style={{
             fontFamily: brand.fontSans,
-            fontSize: 100,
+            fontSize: 90,
             fontWeight: 900,
             color: brand.cream,
             lineHeight: 1,
-            textShadow: `0 0 ${24 * glowPulse}px ${brand.orange}88`,
+            textShadow: `0 0 20px ${brand.orange}44`,
             letterSpacing: "-2px",
           }}>
             EL ERROR
           </div>
           <div style={{
             fontFamily: brand.fontMono,
-            fontSize: 140,
+            fontSize: 160,
             fontWeight: 900,
             color: brand.orange,
-            lineHeight: 0.9,
+            lineHeight: 0.85,
             textShadow: [
-              `0 0 ${20 * glowPulse}px ${brand.orange}`,
-              `0 0 ${50 * glowPulse}px ${brand.orange}88`,
-              `0 0 ${100 * glowPulse}px ${brand.orange}33`,
+              `0 0 ${15 * pulse}px ${brand.orange}AA`,
+              `0 0 ${40 * pulse}px ${brand.orange}55`,
             ].join(", "),
           }}>
             #1
           </div>
           <div style={{
             fontFamily: brand.fontSans,
-            fontSize: 52,
-            fontWeight: 300,
+            fontSize: 60,
+            fontWeight: 400,
             color: brand.cream,
-            opacity: 0.7,
-            letterSpacing: "6px",
+            opacity: 0.8,
+            letterSpacing: "8px",
             textTransform: "uppercase",
-            marginTop: 8,
+            marginTop: 10,
           }}>
             con RAG
           </div>
         </div>
 
-        {/* "darle el documento ENTERO" */}
         <div style={{
-          background: `${brand.orange}15`,
-          border: `2px solid ${brand.orange}55`,
-          borderRadius: 16,
-          padding: "18px 36px",
-          opacity: interpolate(subP, [0, 1], [0, 1]),
-          transform: `translateY(${interpolate(subP, [0, 1], [20, 0])}px)`,
+          background: `rgba(255, 122, 26, 0.1)`,
+          border: `2px solid ${brand.orange}66`,
+          borderRadius: 20,
+          padding: "20px 40px",
+          opacity: subSpring,
+          transform: `translateY(${interpolate(subSpring, [0, 1], [30, 0])}px)`,
+          boxShadow: `0 0 30px ${brand.orange}33`,
         }}>
           <span style={{
             fontFamily: brand.fontSans,
-            fontSize: 40,
+            fontSize: 44,
             fontWeight: 700,
             color: brand.orange,
-            textShadow: `0 0 10px ${brand.orange}99`,
+            textTransform: "uppercase",
+            letterSpacing: "1px",
+            textShadow: `0 0 10px ${brand.orange}66`,
           }}>
             darle el documento ENTERO
           </span>
