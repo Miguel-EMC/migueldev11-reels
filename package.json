@@ -6,6 +6,10 @@
     "dev": "remotion studio",
     "start": "remotion studio",
     "render": "npx remotion render src/index.ts TipsVSCode out/tips-vscode.mp4 --codec=h264",
+    "render:roadmap": "npx remotion render src/index.ts RoadmapIA out/roadmap-ia.mp4 --codec=h264",
+    "render:hottake": "npx remotion render src/index.ts HotTakeIA out/hot-take-ia.mp4 --codec=h264",
+    "render:tools": "npx remotion render src/index.ts ToolsIA out/tools-ia.mp4 --codec=h264",
+    "render:kinetic": "npx remotion render src/index.ts VerdadDev2026 out/verdad-dev-2026.mp4 --codec=h264",
     "render:rag1": "npx remotion render src/index.ts RagCap1 out/rag-cap1.mp4 --codec=h264",
     "render:rag2": "npx remotion render src/index.ts RagCap2 out/rag-cap2.mp4 --codec=h264"
   },
@@ -13,6 +17,7 @@
     "@remotion/cli": "4.0.479",
     "@remotion/google-fonts": "4.0.479",
     "@remotion/transitions": "4.0.479",
+    "lucide-react": "^1.21.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "remotion": "4.0.479",
