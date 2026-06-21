@@ -10,6 +10,8 @@
     "render:hottake": "npx remotion render src/index.ts HotTakeIA out/hot-take-ia.mp4 --codec=h264",
     "render:tools": "npx remotion render src/index.ts ToolsIA out/tools-ia.mp4 --codec=h264",
     "render:kinetic": "npx remotion render src/index.ts VerdadDev2026 out/verdad-dev-2026.mp4 --codec=h264",
+    "render:carousel": "node scripts/export-carousel.js",
+    "render:carousel-linux": "node scripts/export-carousel-linux.js",
     "render:rag1": "npx remotion render src/index.ts RagCap1 out/rag-cap1.mp4 --codec=h264",
     "render:rag2": "npx remotion render src/index.ts RagCap2 out/rag-cap2.mp4 --codec=h264"
   },

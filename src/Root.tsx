@@ -34,6 +34,8 @@ import { RoadmapIA } from "./videos/roadmap/RoadmapIA";
 import { HotTakeIA } from "./videos/hottake/HotTakeIA";
 import { ToolsIA } from "./videos/tools/ToolsIA";
 import { VerdadDev2026 } from "./videos/kinetic/VerdadDev2026";
+import { Carrusel } from "./videos/carousel/Carrusel";
+import { CarruselLinux } from "./videos/carousel/CarruselLinux";
 
 loadInter();
 loadJetBrains();
@@ -42,6 +44,8 @@ const totalFrames = tips.length * FRAMES_PER_TIP;
 
 export const RemotionRoot: React.FC = () => (
   <>
+    <Composition id="CarruselLinux" component={CarruselLinux} durationInFrames={7} fps={30} width={1080} height={1350} />
+    <Composition id="Carrusel" component={Carrusel} durationInFrames={7} fps={30} width={1080} height={1350} />
     <Composition id="VerdadDev2026" component={VerdadDev2026} durationInFrames={960} fps={30} width={1080} height={1920} />
     <Composition id="ToolsIA" component={ToolsIA} durationInFrames={1050} fps={30} width={1080} height={1920} />
     <Composition id="HotTakeIA" component={HotTakeIA} durationInFrames={840} fps={30} width={1080} height={1920} />
