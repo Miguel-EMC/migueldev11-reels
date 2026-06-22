@@ -16,6 +16,9 @@
     "render:carousel-linux-vs-windows": "node scripts/export-carousel-linux-vs-windows.js",
     "render:carousel-proyectos": "node scripts/export-carousel-proyectos.js",
     "render:carousel-marketing": "node scripts/export-all-marketing.js",
+    "render:carousel-inspiracion": "node scripts/export-carousel-inspiracion.js",
+    "render:carousel-dopamina": "node scripts/export-carousel-dopamina.js",
+    "render:carousel-claude": "node scripts/export-carousel-claude.js",
     "render:rag1": "npx remotion render src/index.ts RagCap1 out/rag-cap1.mp4 --codec=h264",
     "render:rag2": "npx remotion render src/index.ts RagCap2 out/rag-cap2.mp4 --codec=h264"
   },
