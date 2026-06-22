@@ -12,6 +12,10 @@
     "render:kinetic": "npx remotion render src/index.ts VerdadDev2026 out/verdad-dev-2026.mp4 --codec=h264",
     "render:carousel": "node scripts/export-carousel.js",
     "render:carousel-linux": "node scripts/export-carousel-linux.js",
+    "render:carousel-terraform": "node scripts/export-carousel-terraform.js",
+    "render:carousel-linux-vs-windows": "node scripts/export-carousel-linux-vs-windows.js",
+    "render:carousel-proyectos": "node scripts/export-carousel-proyectos.js",
+    "render:carousel-marketing": "node scripts/export-all-marketing.js",
     "render:rag1": "npx remotion render src/index.ts RagCap1 out/rag-cap1.mp4 --codec=h264",
     "render:rag2": "npx remotion render src/index.ts RagCap2 out/rag-cap2.mp4 --codec=h264"
   },

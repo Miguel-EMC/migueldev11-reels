@@ -36,6 +36,14 @@ import { ToolsIA } from "./videos/tools/ToolsIA";
 import { VerdadDev2026 } from "./videos/kinetic/VerdadDev2026";
 import { Carrusel } from "./videos/carousel/Carrusel";
 import { CarruselLinux } from "./videos/carousel/CarruselLinux";
+import { CarruselTerraform } from "./videos/carousel/CarruselTerraform";
+import { CarruselLinuxVsWindows } from "./videos/carousel/CarruselLinuxVsWindows";
+import { CarruselProyectosEntrevista } from "./videos/carousel/CarruselProyectosEntrevista";
+import { CarruselJuniorSenior } from "./videos/carousel/CarruselJuniorSenior";
+import { CarruselInglesDevs } from "./videos/carousel/CarruselInglesDevs";
+import { CarruselRutaFastAPI } from "./videos/carousel/CarruselRutaFastAPI";
+import { CarruselGitSalvavidas } from "./videos/carousel/CarruselGitSalvavidas";
+import { CarruselMonolitoMicro } from "./videos/carousel/CarruselMonolitoMicro";
 
 loadInter();
 loadJetBrains();
@@ -44,6 +52,14 @@ const totalFrames = tips.length * FRAMES_PER_TIP;
 
 export const RemotionRoot: React.FC = () => (
   <>
+    <Composition id="CarruselTerraform" component={CarruselTerraform} durationInFrames={8} fps={30} width={1080} height={1350} />
+    <Composition id="CarruselLinuxVsWindows" component={CarruselLinuxVsWindows} durationInFrames={8} fps={30} width={1080} height={1350} />
+    <Composition id="CarruselProyectosEntrevista" component={CarruselProyectosEntrevista} durationInFrames={8} fps={30} width={1080} height={1350} />
+    <Composition id="CarruselJuniorSenior" component={CarruselJuniorSenior} durationInFrames={8} fps={30} width={1080} height={1350} />
+    <Composition id="CarruselInglesDevs" component={CarruselInglesDevs} durationInFrames={8} fps={30} width={1080} height={1350} />
+    <Composition id="CarruselRutaFastAPI" component={CarruselRutaFastAPI} durationInFrames={8} fps={30} width={1080} height={1350} />
+    <Composition id="CarruselGitSalvavidas" component={CarruselGitSalvavidas} durationInFrames={8} fps={30} width={1080} height={1350} />
+    <Composition id="CarruselMonolitoMicro" component={CarruselMonolitoMicro} durationInFrames={8} fps={30} width={1080} height={1350} />
     <Composition id="CarruselLinux" component={CarruselLinux} durationInFrames={7} fps={30} width={1080} height={1350} />
     <Composition id="Carrusel" component={Carrusel} durationInFrames={7} fps={30} width={1080} height={1350} />
     <Composition id="VerdadDev2026" component={VerdadDev2026} durationInFrames={960} fps={30} width={1080} height={1920} />
