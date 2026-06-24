@@ -20,22 +20,29 @@
     "render:carousel-dopamina": "node scripts/export-carousel-dopamina.js",
     "render:carousel-claude": "node scripts/export-carousel-claude.js",
     "render:rag1": "npx remotion render src/index.ts RagCap1 out/rag-cap1.mp4 --codec=h264",
-    "render:rag2": "npx remotion render src/index.ts RagCap2 out/rag-cap2.mp4 --codec=h264"
+    "render:rag2": "npx remotion render src/index.ts RagCap2 out/rag-cap2.mp4 --codec=h264",
+    "render:meme-windows-linux": "npx remotion render src/index.ts MemeWindowsVsLinux out/meme-windows-vs-linux.mp4 --codec=h264",
+    "render:hacker-linux": "npx remotion render src/index.ts HackerLinuxVideo out/hacker-linux.mp4 --codec=h264"
   },
   "dependencies": {
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.18.0",
     "@remotion/cli": "4.0.479",
     "@remotion/google-fonts": "4.0.479",
+    "@remotion/three": "^4.0.479",
     "@remotion/transitions": "4.0.479",
     "lucide-react": "^1.21.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "remotion": "4.0.479",
+    "three": "^0.184.0",
     "zod": "4.3.6"
   },
   "devDependencies": {
     "@remotion/eslint-config": "4.0.479",
     "@types/react": "18.3.1",
     "@types/react-dom": "18.3.1",
+    "@types/three": "^0.184.1",
     "typescript": "5.4.5"
   },
   "remotion": {

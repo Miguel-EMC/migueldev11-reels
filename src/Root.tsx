@@ -47,6 +47,10 @@ import { CarruselMonolitoMicro } from "./videos/carousel/CarruselMonolitoMicro";
 import { CarruselInspiracionDev } from "./videos/carousel/CarruselInspiracionDev";
 import { CarruselDopaminaIA } from "./videos/carousel/CarruselDopaminaIA";
 import { CarruselClaudeCode } from "./videos/carousel/CarruselClaudeCode";
+import { MemeWindowsVsLinux } from "./videos/dev3d/MemeWindowsVsLinux";
+import { HackerLinuxVideo } from "./videos/dev3d/HackerLinuxVideo";
+import { GitHacksReel, GIT_HACKS_TOTAL_FRAMES } from "./videos/viral/GitHacksReel";
+import { IaTruthsReel, IA_TRUTHS_TOTAL_FRAMES } from "./videos/viral/IaTruthsReel";
 
 loadInter();
 loadJetBrains();
@@ -106,5 +110,13 @@ export const RemotionRoot: React.FC = () => (
     {/* AI Concepts (Independent) Series */}
     <Composition id="ConceptsCap1" component={ConceptsCap1} durationInFrames={CONCEPTS_CAP1_TOTAL_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="ConceptsCap2" component={ConceptsCap2} durationInFrames={CONCEPTS_CAP2_TOTAL_FRAMES} fps={30} width={1080} height={1920} />
+
+    {/* Dev Video Reels (HTML/CSS animations) */}
+    <Composition id="MemeWindowsVsLinux" component={MemeWindowsVsLinux} durationInFrames={450} fps={30} width={1080} height={1920} />
+    <Composition id="HackerLinuxVideo" component={HackerLinuxVideo} durationInFrames={450} fps={30} width={1080} height={1920} />
+
+    {/* Viral TikTok Reels (Kinetic typography & Neon animations) */}
+    <Composition id="GitHacksReel" component={GitHacksReel} durationInFrames={GIT_HACKS_TOTAL_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="IaTruthsReel" component={IaTruthsReel} durationInFrames={IA_TRUTHS_TOTAL_FRAMES} fps={30} width={1080} height={1920} />
   </>
 );

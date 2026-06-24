@@ -5,6 +5,7 @@ export const conceptsTheme = {
   green: "#00FF41",
   orange: "#FF7A1A",
   yellow: "#EAB308",
+  red: "#EF4444",
   cream: "#F5F5F0",
   textDim: "#94A3B8",
   fontSans: "'Inter', 'Helvetica Neue', Arial, sans-serif",
@@ -14,6 +15,7 @@ export const conceptsTheme = {
   glowGreen: "0 0 12px #00FF41, 0 0 30px #00FF4166",
   glowOrange: "0 0 12px #FF7A1A, 0 0 30px #FF7A1A66",
   glowYellow: "0 0 12px #EAB308, 0 0 30px #EAB30866",
+  glowRed: "0 0 12px #EF4444, 0 0 30px #EF444466",
 } as const;
 
 export const CONCEPTS_CAP1_TOTAL_FRAMES = 2250;
