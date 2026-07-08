@@ -22,7 +22,14 @@
     "render:rag1": "npx remotion render src/index.ts RagCap1 out/rag-cap1.mp4 --codec=h264",
     "render:rag2": "npx remotion render src/index.ts RagCap2 out/rag-cap2.mp4 --codec=h264",
     "render:meme-windows-linux": "npx remotion render src/index.ts MemeWindowsVsLinux out/meme-windows-vs-linux.mp4 --codec=h264",
-    "render:hacker-linux": "npx remotion render src/index.ts HackerLinuxVideo out/hacker-linux.mp4 --codec=h264"
+    "render:hacker-linux": "npx remotion render src/index.ts HackerLinuxVideo out/hacker-linux.mp4 --codec=h264",
+    "render:git-hacks": "npx remotion render src/index.ts GitHacksReel out/git-hacks-reel.mp4 --codec=h264",
+    "render:ia-truths": "npx remotion render src/index.ts IaTruthsReel out/ia-truths-reel.mp4 --codec=h264",
+    "render:ai-tools": "npx remotion render src/index.ts AiToolsReel out/ai-tools-reel.mp4 --codec=h264",
+    "render:burnout-dev": "npx remotion render src/index.ts BurnoutDevReel out/burnout-dev-reel.mp4 --codec=h264",
+    "render:three-d": "npx remotion render src/index.ts ThreeDWorldVideo out/three-d-world-reel.mp4 --codec=h264",
+    "render:anime": "npx remotion render src/index.ts AnimeStyleVideo out/anime-style-reel.mp4 --codec=h264",
+    "render:novela": "npx remotion render src/index.ts NovelaFrutas out/novela-frutas.mp4 --codec=h264"
   },
   "dependencies": {
     "@react-three/drei": "^9.122.0",

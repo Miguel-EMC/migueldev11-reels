@@ -2,7 +2,7 @@ import React from "react";
 import { ViralReelTemplate, ViralStep } from "./ViralReelTemplate";
 import { brand } from "../../themes/brand";
 
-export const IA_TRUTHS_TOTAL_FRAMES = 570; // Hook (90) + 3 Steps (3 * 120) + CTA (120)
+export const IA_TRUTHS_TOTAL_FRAMES = 810; // Hook (120) + 3 Steps (3 * 180) + CTA (150)
 
 const STEPS: ViralStep[] = [
   {

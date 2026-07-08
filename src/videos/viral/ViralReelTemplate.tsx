@@ -404,10 +404,10 @@ export const ViralReelTemplate: React.FC<ViralReelTemplateProps> = ({
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // Timing: 90 frames for hook, 120 frames per step, 120 frames for CTA
-  const HOOK_DURATION = 90;
-  const STEP_DURATION = 120;
-  const CTA_DURATION = 120;
+  // Timing: 120 frames for hook (4s), 180 frames per step (6s), 150 frames for CTA (5s)
+  const HOOK_DURATION = 120;
+  const STEP_DURATION = 180;
+  const CTA_DURATION = 150;
 
   const totalSteps = steps.length;
   

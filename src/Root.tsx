@@ -49,8 +49,13 @@ import { CarruselDopaminaIA } from "./videos/carousel/CarruselDopaminaIA";
 import { CarruselClaudeCode } from "./videos/carousel/CarruselClaudeCode";
 import { MemeWindowsVsLinux } from "./videos/dev3d/MemeWindowsVsLinux";
 import { HackerLinuxVideo } from "./videos/dev3d/HackerLinuxVideo";
+import { ThreeDWorldVideo, THREED_WORLD_TOTAL_FRAMES } from "./videos/dev3d/ThreeDWorldVideo";
+import { AnimeStyleVideo, ANIME_STYLE_TOTAL_FRAMES } from "./videos/dev3d/AnimeStyleVideo";
 import { GitHacksReel, GIT_HACKS_TOTAL_FRAMES } from "./videos/viral/GitHacksReel";
 import { IaTruthsReel, IA_TRUTHS_TOTAL_FRAMES } from "./videos/viral/IaTruthsReel";
+import { AiToolsReel, AI_TOOLS_TOTAL_FRAMES } from "./videos/viral/AiToolsReel";
+import { BurnoutDevReel, BURNOUT_DEV_TOTAL_FRAMES } from "./videos/viral/BurnoutDevReel";
+import { NovelaFrutas, NOVELA_TOTAL_FRAMES } from "./videos/novela/NovelaFrutas";
 
 loadInter();
 loadJetBrains();
@@ -114,9 +119,14 @@ export const RemotionRoot: React.FC = () => (
     {/* Dev Video Reels (HTML/CSS animations) */}
     <Composition id="MemeWindowsVsLinux" component={MemeWindowsVsLinux} durationInFrames={450} fps={30} width={1080} height={1920} />
     <Composition id="HackerLinuxVideo" component={HackerLinuxVideo} durationInFrames={450} fps={30} width={1080} height={1920} />
+    <Composition id="ThreeDWorldVideo" component={ThreeDWorldVideo} durationInFrames={THREED_WORLD_TOTAL_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="AnimeStyleVideo" component={AnimeStyleVideo} durationInFrames={ANIME_STYLE_TOTAL_FRAMES} fps={30} width={1080} height={1920} />
 
     {/* Viral TikTok Reels (Kinetic typography & Neon animations) */}
     <Composition id="GitHacksReel" component={GitHacksReel} durationInFrames={GIT_HACKS_TOTAL_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="IaTruthsReel" component={IaTruthsReel} durationInFrames={IA_TRUTHS_TOTAL_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="AiToolsReel" component={AiToolsReel} durationInFrames={AI_TOOLS_TOTAL_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="BurnoutDevReel" component={BurnoutDevReel} durationInFrames={BURNOUT_DEV_TOTAL_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="NovelaFrutas" component={NovelaFrutas} durationInFrames={NOVELA_TOTAL_FRAMES} fps={30} width={1080} height={1920} />
   </>
 );

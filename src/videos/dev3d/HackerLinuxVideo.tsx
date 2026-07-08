@@ -260,7 +260,7 @@ export const HackerLinuxVideo: React.FC = () => {
 
       {/* SCENE 1: HOOK */}
       <Sequence from={0} durationInFrames={90}>
-        <AbsoluteFill style={{ zIndex: 10, display: "flex", flexDirection: "column", alignItems: "center", justifyOrigin: "center", justifyContent: "center", padding: "0 50px" }}>
+        <AbsoluteFill style={{ zIndex: 10, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "0 50px" }}>
           <div
             style={{
               width: "100%",
