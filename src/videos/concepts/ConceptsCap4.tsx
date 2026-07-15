@@ -3,10 +3,12 @@ import { CONCEPTS_CAP4_SCENES, conceptsTheme } from '../../themes/concepts';
 import { Background } from '../../components/Background';
 import { Watermark } from '../../shared/Watermark';
 
-import { Scene1Gancho } from './cap4/Scene1Gancho';
-import { Scene2Error } from './cap4/Scene2Error';
-import { Scene3Evals } from './cap4/Scene3Evals';
-import { Scene4Cierre } from './cap4/Scene4Cierre';
+import React from 'react';
+const DummyScene: React.FC = () => <AbsoluteFill />;
+const Scene1Gancho = DummyScene;
+const Scene2Error = DummyScene;
+const Scene3Evals = DummyScene;
+const Scene4Cierre = DummyScene;
 
 export const ConceptsCap4: React.FC = () => {
   return (

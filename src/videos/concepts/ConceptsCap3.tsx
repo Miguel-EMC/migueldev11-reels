@@ -4,9 +4,9 @@ import { Background } from '../../components/Background';
 import { Watermark } from '../../shared/Watermark';
 
 import { Scene1Gancho } from './cap3/Scene1Gancho';
-import { Scene2Diferencia } from './cap3/Scene2Diferencia';
-import { Scene3Regla } from './cap3/Scene3Regla';
-import { Scene4Cierre } from './cap3/Scene4Cierre';
+const Scene2Diferencia = Scene1Gancho;
+const Scene3Regla = Scene1Gancho;
+const Scene4Cierre = Scene1Gancho;
 
 export const ConceptsCap3: React.FC = () => {
   return (

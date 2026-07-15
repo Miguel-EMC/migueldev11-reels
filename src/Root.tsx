@@ -56,6 +56,10 @@ import { IaTruthsReel, IA_TRUTHS_TOTAL_FRAMES } from "./videos/viral/IaTruthsRee
 import { AiToolsReel, AI_TOOLS_TOTAL_FRAMES } from "./videos/viral/AiToolsReel";
 import { BurnoutDevReel, BURNOUT_DEV_TOTAL_FRAMES } from "./videos/viral/BurnoutDevReel";
 import { NovelaFrutas, NOVELA_TOTAL_FRAMES } from "./videos/novela/NovelaFrutas";
+import { McpVideo, MCP_TOTAL_FRAMES } from "./videos/mcp/McpVideo";
+import { ExtensionsVideo, EXTENSIONS_TOTAL_FRAMES } from "./videos/extensions/ExtensionsVideo";
+import { FactoryVideo, FACTORY_TOTAL_FRAMES } from "./videos/factory/FactoryVideo";
+import { VIDEO_SCRIPTS } from "./videos/factory/scriptsData";
 
 loadInter();
 loadJetBrains();
@@ -128,5 +132,25 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="AiToolsReel" component={AiToolsReel} durationInFrames={AI_TOOLS_TOTAL_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="BurnoutDevReel" component={BurnoutDevReel} durationInFrames={BURNOUT_DEV_TOTAL_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="NovelaFrutas" component={NovelaFrutas} durationInFrames={NOVELA_TOTAL_FRAMES} fps={30} width={1080} height={1920} />
+
+    {/* Custom video compositions for migueldev11 */}
+    <Composition id="McpVideo" component={McpVideo} durationInFrames={MCP_TOTAL_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="ExtensionsVideo" component={ExtensionsVideo} durationInFrames={EXTENSIONS_TOTAL_FRAMES} fps={30} width={1080} height={1920} />
+
+    {/* Dynamic AI Video Factory (20 topics) */}
+    {VIDEO_SCRIPTS.map((script) => (
+      <Composition
+        key={script.id}
+        id={`factory-${script.id}`}
+        component={FactoryVideo}
+        durationInFrames={FACTORY_TOTAL_FRAMES}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          scriptId: script.id,
+        }}
+      />
+    ))}
   </>
 );

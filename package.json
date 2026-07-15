@@ -29,7 +29,10 @@
     "render:burnout-dev": "npx remotion render src/index.ts BurnoutDevReel out/burnout-dev-reel.mp4 --codec=h264",
     "render:three-d": "npx remotion render src/index.ts ThreeDWorldVideo out/three-d-world-reel.mp4 --codec=h264",
     "render:anime": "npx remotion render src/index.ts AnimeStyleVideo out/anime-style-reel.mp4 --codec=h264",
-    "render:novela": "npx remotion render src/index.ts NovelaFrutas out/novela-frutas.mp4 --codec=h264"
+    "render:novela": "npx remotion render src/index.ts NovelaFrutas out/novela-frutas.mp4 --codec=h264",
+    "render:mcp": "npx remotion render src/index.ts McpVideo out/mcp-video.mp4 --codec=h264",
+    "render:extensions": "npx remotion render src/index.ts ExtensionsVideo out/extensions-video.mp4 --codec=h264",
+    "render:vectordb": "npx remotion render src/index.ts ConceptsCap2 out/vector-database.mp4 --codec=h264"
   },
   "dependencies": {
     "@react-three/drei": "^9.122.0",
