@@ -9,20 +9,21 @@ export const Scene1HookServerless: React.FC = () => {
   const { fps } = useVideoConfig();
 
   const entrance = spring({ frame, fps, config: { damping: 12 } });
+  const pulse = Math.sin(frame / 6) * 0.05 + 1;
 
   return (
-    <EmcodeSceneWrapper categoryTag="SERVERLESS AI" gridColor={brand.orange}>
+    <EmcodeSceneWrapper categoryTag="ARQUITECTURA SERVERLESS IA" gridColor={brand.cyan}>
       {/* 1. TOP ZONE: Massive Title Banner */}
       <div
         style={{
-          background: "rgba(255, 122, 26, 0.12)",
+          background: "rgba(34, 211, 238, 0.12)",
           backdropFilter: "blur(14px)",
-          border: `4px solid ${brand.orange}`,
+          border: `4px solid ${brand.cyan}`,
           borderRadius: 32,
-          padding: "45px 30px",
+          padding: "40px 30px",
           width: "100%",
           textAlign: "center",
-          boxShadow: `0 20px 60px rgba(0,0,0,0.7), ${brand.glowOrange}`,
+          boxShadow: `0 20px 60px rgba(0,0,0,0.7), ${brand.glowCyan}`,
           transform: `scale(${entrance})`,
           opacity: entrance,
           boxSizing: "border-box",
@@ -31,53 +32,55 @@ export const Scene1HookServerless: React.FC = () => {
         <div
           style={{
             fontFamily: brand.fontSans,
-            fontSize: 66,
+            fontSize: 64,
             fontWeight: 950,
             color: brand.cream,
             lineHeight: 1.15,
             letterSpacing: "-2px",
           }}
         >
-          ¿Desplegar un agente de IA <span style={{ color: brand.orange, textShadow: brand.glowOrange }}>sin quebrar? 💸</span>
+          Agente de IA que escala a <span style={{ color: brand.cyan, textShadow: brand.glowCyan }}>Millones 🤖⚡</span>
         </div>
       </div>
 
-      {/* 2. MIDDLE ZONE: AWS Visual Centerpiece (Takes 650px) */}
+      {/* 2. MIDDLE ZONE: AWS Visual Centerpiece */}
       <div
         style={{
           width: "100%",
           background: "rgba(10, 20, 40, 0.85)",
           backdropFilter: "blur(16px)",
-          border: `3px solid ${brand.orange}`,
+          border: `3px solid ${brand.cyan}`,
           borderRadius: 32,
-          padding: "50px 35px",
+          padding: "45px 35px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           textAlign: "center",
-          gap: 24,
-          boxShadow: `0 20px 50px rgba(0,0,0,0.7), ${brand.glowOrange}44`,
-          transform: `scale(${entrance})`,
+          gap: 20,
+          boxShadow: `0 20px 50px rgba(0,0,0,0.7), ${brand.glowCyan}44`,
+          transform: `scale(${pulse})`,
           opacity: entrance,
           boxSizing: "border-box",
         }}
       >
-        <AwsLogo size={140} />
-        <div style={{ fontFamily: brand.fontMono, fontSize: 24, fontWeight: 900, color: brand.orange, letterSpacing: 3 }}>
-          [ EVENT-DRIVEN PATTERN ]
+        <AwsLogo size={100} />
+
+        <div style={{ fontFamily: brand.fontMono, fontSize: 38, fontWeight: 900, color: brand.green, textShadow: brand.glowGreen }}>
+          $0 USD en Servidores Inactivos 💸
         </div>
-        <div style={{ fontFamily: brand.fontSans, fontSize: 44, fontWeight: 900, color: brand.cream, lineHeight: 1.25 }}>
-          Pagas $0.00 en reposo. Solo pagas por cada ejecución.
+
+        <div style={{ fontFamily: brand.fontSans, fontSize: 24, fontWeight: 800, color: brand.cream }}>
+          Paga únicamente por cada milisegundo de ejecución real
         </div>
       </div>
 
-      {/* 3. BOTTOM ZONE: Large Takeaway */}
+      {/* 3. BOTTOM ZONE: Takeaway */}
       <div
         style={{
           background: "rgba(10, 20, 40, 0.8)",
-          border: `2px solid ${brand.orange}66`,
+          border: `2px solid ${brand.cyan}66`,
           borderRadius: 24,
-          padding: "26px 35px",
+          padding: "24px 35px",
           width: "100%",
           textAlign: "center",
           boxSizing: "border-box",
@@ -85,8 +88,8 @@ export const Scene1HookServerless: React.FC = () => {
           opacity: entrance,
         }}
       >
-        <div style={{ fontFamily: brand.fontSans, fontSize: 34, fontWeight: 800, color: brand.cream, lineHeight: 1.35 }}>
-          Dejar servidores 24/7 para un agente es un desperdicio. <span style={{ color: brand.orange, fontWeight: 900 }}>Usa Serverless.</span>
+        <div style={{ fontFamily: brand.fontSans, fontSize: 30, fontWeight: 800, color: brand.cream, lineHeight: 1.35 }}>
+          La arquitectura serverless perfecta para <span style={{ color: brand.cyan, fontWeight: 900 }}>modelos de IA y LLMs.</span>
         </div>
       </div>
     </EmcodeSceneWrapper>

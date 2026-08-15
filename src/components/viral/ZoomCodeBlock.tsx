@@ -6,7 +6,7 @@ import { emcodeTheme } from "../../themes/emcode";
 
 interface Props {
   code: string;
-  language: "python" | "typescript" | "javascript" | "bash" | "json" | "hcl" | "dockerfile" | "sql";
+  language: "python" | "typescript" | "javascript" | "bash" | "json" | "hcl" | "dockerfile" | "sql" | "yaml";
   filename?: string;
   highlightLines?: number[];
   startFrame?: number;

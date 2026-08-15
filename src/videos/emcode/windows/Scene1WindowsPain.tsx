@@ -9,6 +9,7 @@ export const Scene1WindowsPain: React.FC = () => {
   const { fps } = useVideoConfig();
 
   const entrance = spring({ frame, fps, config: { damping: 12 } });
+  const pulse = Math.sin(frame / 6) * 0.05 + 1;
 
   return (
     <EmcodeSceneWrapper categoryTag="DEV ENVIRONMENT" gridColor={brand.red}>
@@ -43,21 +44,21 @@ export const Scene1WindowsPain: React.FC = () => {
         </div>
       </div>
 
-      {/* 2. MIDDLE ZONE: Giant Dual 3D Comparison Cards (Takes 650px of space) */}
+      {/* 2. MIDDLE ZONE: Giant Dual 3D Comparison Cards */}
       <div
         style={{
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
           gap: 28,
           width: "100%",
-          transform: `perspective(1000px) rotateX(15deg) scale(${interpolate(entrance, [0, 1], [0.85, 1])})`,
+          transform: `perspective(1000px) rotateX(12deg) scale(${interpolate(entrance, [0, 1], [0.85, 1])})`,
           opacity: entrance,
         }}
       >
         {/* Windows Card */}
         <div
           style={{
-            background: "rgba(15, 23, 42, 0.9)",
+            background: "rgba(15, 23, 42, 0.92)",
             border: `3px solid ${brand.red}`,
             borderRadius: 32,
             padding: "45px 24px",
@@ -73,18 +74,18 @@ export const Scene1WindowsPain: React.FC = () => {
           <div style={{ fontFamily: brand.fontSans, fontSize: 32, fontWeight: 900, color: brand.cream }}>
             Windows
           </div>
-          <div style={{ fontFamily: brand.fontMono, fontSize: 56, fontWeight: 900, color: brand.red, textShadow: brand.glowRed }}>
-            99%...
+          <div style={{ fontFamily: brand.fontMono, fontSize: 52, fontWeight: 900, color: brand.red, textShadow: brand.glowRed }}>
+            12 GB ⚠️
           </div>
           <span style={{ fontFamily: brand.fontSans, fontSize: 22, color: brand.textDim, fontWeight: 600 }}>
-            Reinicios forzados en medio del deploy ⏳
+            Docker lento y freeze constante
           </span>
         </div>
 
-        {/* Manjaro Card */}
+        {/* Linux Card */}
         <div
           style={{
-            background: "rgba(10, 20, 40, 0.9)",
+            background: "rgba(10, 20, 40, 0.92)",
             border: `3px solid ${brand.green}`,
             borderRadius: 32,
             padding: "45px 24px",
@@ -94,17 +95,18 @@ export const Scene1WindowsPain: React.FC = () => {
             textAlign: "center",
             gap: 20,
             boxShadow: `0 20px 50px rgba(0,0,0,0.6), ${brand.glowGreen}44`,
+            transform: `scale(${pulse})`,
           }}
         >
           <LinuxIcon size={96} />
           <div style={{ fontFamily: brand.fontSans, fontSize: 32, fontWeight: 900, color: brand.cream }}>
-            Manjaro
+            Linux
           </div>
-          <div style={{ fontFamily: brand.fontMono, fontSize: 56, fontWeight: 900, color: brand.green, textShadow: brand.glowGreen }}>
-            0.8s ⚡
+          <div style={{ fontFamily: brand.fontMono, fontSize: 52, fontWeight: 900, color: brand.green, textShadow: brand.glowGreen }}>
+            Nativo ⚡
           </div>
           <span style={{ fontFamily: brand.fontSans, fontSize: 22, color: brand.green, fontWeight: 600 }}>
-            Control total y compilación nativa 🔥
+            La mejor decisión técnica
           </span>
         </div>
       </div>
@@ -124,7 +126,7 @@ export const Scene1WindowsPain: React.FC = () => {
         }}
       >
         <div style={{ fontFamily: brand.fontSans, fontSize: 34, fontWeight: 800, color: brand.cream, lineHeight: 1.3 }}>
-          Media hora perdida justo cuando tienes que hacer un <span style={{ color: brand.red, fontWeight: 900 }}>deploy urgente.</span>
+          Déjame decirte por qué <span style={{ color: brand.green, fontWeight: 900, textShadow: brand.glowGreen }}>cambiar a Linux</span> transformó todo.
         </div>
       </div>
     </EmcodeSceneWrapper>

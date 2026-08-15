@@ -2,21 +2,37 @@ import React from "react";
 import { spring, useCurrentFrame, useVideoConfig } from "remotion";
 import { brand } from "../../../themes/brand";
 import { EmcodeSceneWrapper } from "../../../components/viral/EmcodeSceneWrapper";
+import { ZoomCodeBlock } from "../../../components/viral/ZoomCodeBlock";
+import { TerraformIcon } from "../../../components/flat/FlatIcons";
 
 export const Scene3TerraformApply: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  const entrance = spring({ frame, fps, config: { damping: 12 } });
+  const isApplyPhase = frame >= 240;
+  const currentFrame = isApplyPhase ? frame - 240 : frame;
+  const entrance = spring({ frame: currentFrame, fps, config: { damping: 12 } });
 
-  // Relaxed, slow-paced step reveals across 270 frames (~9.0s)
-  const step1 = frame >= 20;
-  const step2 = frame >= 75;
-  const step3 = frame >= 135;
-  const step4 = frame >= 195;
+  const terraformDeclarativeCode = `# main.tf - Declarative Infrastructure
+resource "aws_db_instance" "postgres" {
+  allocated_storage = 50
+  engine            = "postgres"
+  instance_class    = "db.t4g.medium"
+  multi_az          = true
+  skip_final_snapshot = false
+}`;
+
+  const terraformApplyCode = `$ terraform apply -auto-approve
+Plan: 8 to add, 0 to change, 0 to destroy.
+
+aws_vpc.production: Creating... [0.8s]
+aws_db_instance.postgres: Creating... [4.2s]
+aws_ecs_cluster.main: Creating... [1.1s]
+
+Apply complete! Resources: 8 added. [Total: 6.1s] ⚡`;
 
   return (
-    <EmcodeSceneWrapper categoryTag="PRODUCCIÓN TOTAL" gridColor={brand.green}>
+    <EmcodeSceneWrapper categoryTag="INFRAESTRUCTURA COMO CÓDIGO" gridColor={brand.green}>
       {/* 1. TOP ZONE: Massive Title Banner */}
       <div
         style={{
@@ -24,7 +40,7 @@ export const Scene3TerraformApply: React.FC = () => {
           backdropFilter: "blur(14px)",
           border: `4px solid ${brand.green}`,
           borderRadius: 32,
-          padding: "40px 30px",
+          padding: "36px 30px",
           width: "100%",
           textAlign: "center",
           boxShadow: `0 20px 60px rgba(0,0,0,0.7), ${brand.glowGreen}`,
@@ -36,80 +52,71 @@ export const Scene3TerraformApply: React.FC = () => {
         <div
           style={{
             fontFamily: brand.fontSans,
-            fontSize: 66,
+            fontSize: 64,
             fontWeight: 950,
             color: brand.cream,
             lineHeight: 1.15,
             letterSpacing: "-2px",
           }}
         >
-          terraform apply = <span style={{ color: brand.green, textShadow: brand.glowGreen }}>Producción</span>
+          {!isApplyPhase ? (
+            <>
+              Archivos <span style={{ color: brand.cyan, textShadow: brand.glowCyan }}>Declarativos `.tf` 📝</span>
+            </>
+          ) : (
+            <>
+              `terraform apply` <span style={{ color: brand.green, textShadow: brand.glowGreen }}>en Segundos ⚡</span>
+            </>
+          )}
         </div>
       </div>
 
-      {/* 2. MIDDLE ZONE: Big Terminal Window */}
-      <div
-        style={{
-          width: "100%",
-          background: "#080C14",
-          border: `3px solid ${brand.green}66`,
-          borderRadius: 28,
-          padding: "36px 32px",
-          fontFamily: brand.fontMono,
-          display: "flex",
-          flexDirection: "column",
-          gap: 16,
-          boxSizing: "border-box",
-          transform: `scale(${entrance})`,
-          opacity: entrance,
-        }}
-      >
-        <div style={{ display: "flex", justifyContent: "space-between", borderBottom: "1px solid rgba(255,255,255,0.08)", paddingBottom: 12 }}>
-          <span style={{ color: brand.textDim, fontSize: 18 }}>bash — dev terminal</span>
-          <span style={{ color: brand.green, fontSize: 16, fontWeight: 900 }}>● LIVE APPLY</span>
+      {/* 2. MIDDLE ZONE: Terraform Tool + Code */}
+      <div style={{ width: "100%", display: "flex", flexDirection: "column", gap: 16, transform: `scale(${entrance})`, opacity: entrance }}>
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            background: "rgba(10, 20, 40, 0.9)",
+            border: `2.5px solid ${!isApplyPhase ? brand.cyan : brand.green}88`,
+            borderRadius: 24,
+            padding: "16px 24px",
+            boxSizing: "border-box",
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
+            <TerraformIcon size={60} />
+            <div>
+              <div style={{ fontFamily: brand.fontMono, fontSize: 14, fontWeight: 800, color: !isApplyPhase ? brand.cyan : brand.green, letterSpacing: 2 }}>
+                {!isApplyPhase ? "AUDITABLE & VERSION CONTROLLED" : "100% REPLICABLE ARCHITECTURE"}
+              </div>
+              <div style={{ fontFamily: brand.fontSans, fontSize: 26, fontWeight: 900, color: brand.cream }}>
+                {!isApplyPhase ? "HashiCorp Terraform IaC" : "Despliegue Cloud Automatizado"}
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 28, fontWeight: 900, color: brand.cream }}>
-          <span style={{ color: brand.green }}>$</span>
-          <span>terraform apply -auto-approve</span>
-        </div>
-
-        {step1 && (
-          <div style={{ color: brand.textDim, fontSize: 18, display: "flex", flexDirection: "column", gap: 6, textAlign: "left", paddingLeft: 12, borderLeft: `3px solid ${brand.green}44` }}>
-            <span>aws_iam_role.lambda_exec: Creating...</span>
-            <span>aws_s3_bucket.knowledge: Creating...</span>
-            <span>aws_lambda_function.ai_agent: Creating...</span>
-          </div>
-        )}
-
-        {step2 && (
-          <div style={{ color: brand.cream, fontSize: 18, textAlign: "left", paddingLeft: 12, borderLeft: `3px solid ${brand.green}` }}>
-            <span>aws_iam_role.lambda_exec: Creation complete (1s)</span>
-          </div>
-        )}
-
-        {step3 && (
-          <div style={{ color: brand.cream, fontSize: 18, textAlign: "left", paddingLeft: 12, borderLeft: `3px solid ${brand.green}` }}>
-            <span>aws_lambda_function.ai_agent: Creation complete (3s)</span>
-          </div>
-        )}
-
-        {step4 && (
-          <div style={{ marginTop: 8, padding: "16px 20px", background: "rgba(0, 255, 65, 0.15)", border: `2px solid ${brand.green}`, borderRadius: 16, textAlign: "left" }}>
-            <span style={{ fontFamily: brand.fontSans, fontSize: 24, fontWeight: 900, color: brand.green }}>
-              Apply Complete! 🚀 Resources: 3 added, 0 destroyed.
-            </span>
-          </div>
-        )}
+        <ZoomCodeBlock
+          code={!isApplyPhase ? terraformDeclarativeCode : terraformApplyCode}
+          language={!isApplyPhase ? "hcl" : "bash"}
+          filename={!isApplyPhase ? "infra/database.tf" : "terminal-apply.sh"}
+          startFrame={0}
+          typingSpeed={999}
+          highlightLines={!isApplyPhase ? [2, 5] : [1, 8]}
+          fontSize={21}
+        />
       </div>
 
-      {/* 3. BOTTOM ZONE: Large Takeaway */}
+      {/* 3. BOTTOM ZONE: Takeaway Card */}
       <div
         style={{
           background: "rgba(10, 20, 40, 0.8)",
           border: `2px solid ${brand.green}66`,
           borderRadius: 24,
-          padding: "26px 35px",
+          padding: "22px 35px",
           width: "100%",
           textAlign: "center",
           boxSizing: "border-box",
@@ -117,8 +124,8 @@ export const Scene3TerraformApply: React.FC = () => {
           opacity: entrance,
         }}
       >
-        <div style={{ fontFamily: brand.fontSans, fontSize: 34, fontWeight: 800, color: brand.cream, lineHeight: 1.35 }}>
-          En segundos tienes un entorno idéntico en <span style={{ color: brand.green, fontWeight: 900 }}>desarrollo y producción.</span>
+        <div style={{ fontFamily: brand.fontSans, fontSize: 30, fontWeight: 800, color: brand.cream, lineHeight: 1.35 }}>
+          Arquitectura <span style={{ color: brand.green, fontWeight: 900 }}>replicable, auditable y automatizada</span> con un solo comando.
         </div>
       </div>
     </EmcodeSceneWrapper>

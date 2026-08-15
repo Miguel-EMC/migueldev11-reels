@@ -3,26 +3,32 @@ import { spring, useCurrentFrame, useVideoConfig } from "remotion";
 import { brand } from "../../../themes/brand";
 import { EmcodeSceneWrapper } from "../../../components/viral/EmcodeSceneWrapper";
 import { ZoomCodeBlock } from "../../../components/viral/ZoomCodeBlock";
-import { DockerIcon, LocalStackIcon } from "../../../components/flat/FlatIcons";
+import { DockerIcon, AwsLogo } from "../../../components/flat/FlatIcons";
 
-export const Scene3MockBoto3: React.FC = () => {
+export const Scene4DockerNative: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  const entrance = spring({ frame, fps, config: { damping: 12 } });
+  // Internal phases:
+  // Phase 1 (0-200 frames): Docker Nativo sin capas pesadas + Bash vuela
+  // Phase 2 (200-405 frames): Paridad 100% Local = AWS Cluster
+  const isParityPhase = frame >= 200;
+  const currentFrame = isParityPhase ? frame - 200 : frame;
+  const entrance = spring({ frame: currentFrame, fps, config: { damping: 12 } });
 
-  const localStackCode = `version: "3.8"
-services:
-  localstack:
-    image: localstack/localstack:latest
-    ports:
-      - "4566:4566"            # AWS Gateway Local
-    environment:
-      - SERVICES=s3,lambda,dynamodb,sqs,sns
-      - DOCKER_HOST=unix:///var/run/docker.sock`;
+  const dockerNativeCode = `docker run -d --name api-service -p 8080:8080 emcode/api:v1
+# ✔ Utilizando cgroups nativos del kernel Linux
+# ✔ Consumo de RAM: 320 MB (vs 12 GB en Windows)
+# ✔ Tiempo de arranque: 0.28 segundos ⚡
+# ✔ Status: Running sin máquinas virtuales intermedias`;
+
+  const awsParityCode = `# Local vs AWS ECS / EKS Cluster:
+LOCAL: Docker Engine (Linux x86_64) -> 100% Match
+CLOUD: AWS Fargate / ECS Cluster    -> 100% Match
+RESULTADO: Cero sorpresas en producción 🎯`;
 
   return (
-    <EmcodeSceneWrapper categoryTag="LA SOLUCIÓN OFFLINE" gridColor={brand.cyan}>
+    <EmcodeSceneWrapper categoryTag="DOCKER NATIVO & AWS" gridColor={brand.cyan}>
       {/* 1. TOP ZONE: Massive Title Banner */}
       <div
         style={{
@@ -49,11 +55,19 @@ services:
             letterSpacing: "-2px",
           }}
         >
-          Te presento: <span style={{ color: brand.cyan, textShadow: brand.glowCyan }}>LocalStack ⚡</span>
+          {!isParityPhase ? (
+            <>
+              Docker corre <span style={{ color: brand.cyan, textShadow: brand.glowCyan }}>Nativo ⚡</span>
+            </>
+          ) : (
+            <>
+              Paridad Total con <span style={{ color: brand.orange, textShadow: brand.glowOrange }}>AWS Cloud ☁️</span>
+            </>
+          )}
         </div>
       </div>
 
-      {/* 2. MIDDLE ZONE: LocalStack Card + Docker Compose */}
+      {/* 2. MIDDLE ZONE: Responsive Cards */}
       <div style={{ width: "100%", display: "flex", flexDirection: "column", gap: 16, transform: `scale(${entrance})`, opacity: entrance }}>
         <div
           style={{
@@ -62,33 +76,33 @@ services:
             alignItems: "center",
             justifyContent: "space-between",
             background: "rgba(10, 20, 40, 0.9)",
-            border: `2.5px solid ${brand.cyan}88`,
+            border: `2.5px solid ${isParityPhase ? brand.orange : brand.cyan}88`,
             borderRadius: 24,
             padding: "16px 24px",
             boxSizing: "border-box",
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
-            <DockerIcon size={60} />
+            {!isParityPhase ? <DockerIcon size={64} /> : <AwsLogo size={64} />}
             <div>
-              <div style={{ fontFamily: brand.fontMono, fontSize: 14, fontWeight: 800, color: brand.cyan, letterSpacing: 2 }}>
-                EMULADOR OFFLINE 100% GRATIS
+              <div style={{ fontFamily: brand.fontMono, fontSize: 14, fontWeight: 800, color: isParityPhase ? brand.orange : brand.cyan, letterSpacing: 2 }}>
+                {!isParityPhase ? "ZERO VIRTUALIZATION OVERHEAD" : "DEV = STAGING = PRODUCTION"}
               </div>
               <div style={{ fontFamily: brand.fontSans, fontSize: 26, fontWeight: 900, color: brand.cream }}>
-                AWS dentro de un Docker Container
+                {!isParityPhase ? "Bash Terminal & Kernel cgroups" : "AWS ECS / EKS Cluster"}
               </div>
             </div>
           </div>
         </div>
 
         <ZoomCodeBlock
-          code={localStackCode}
-          language="yaml"
-          filename="docker-compose.yml"
+          code={!isParityPhase ? dockerNativeCode : awsParityCode}
+          language="bash"
+          filename={!isParityPhase ? "docker-execution.sh" : "aws-parity-check.log"}
           startFrame={0}
           typingSpeed={999}
-          highlightLines={[3, 5, 7]}
-          fontSize={21}
+          highlightLines={!isParityPhase ? [1, 3] : [2, 3, 4]}
+          fontSize={22}
         />
       </div>
 
@@ -107,7 +121,15 @@ services:
         }}
       >
         <div style={{ fontFamily: brand.fontSans, fontSize: 30, fontWeight: 800, color: brand.cream, lineHeight: 1.35 }}>
-          Emula AWS en tu laptop: <span style={{ color: brand.cyan, fontWeight: 900 }}>cero tarjeta, cero sorpresas.</span>
+          {!isParityPhase ? (
+            <>
+              La terminal vuela y Docker <span style={{ color: brand.cyan, fontWeight: 900 }}>no devora tu RAM.</span>
+            </>
+          ) : (
+            <>
+              Lo que pruebas en local se comporta <span style={{ color: brand.orange, fontWeight: 900 }}>exactamente igual en la nube.</span>
+            </>
+          )}
         </div>
       </div>
     </EmcodeSceneWrapper>

@@ -9,9 +9,10 @@ export const Scene4CommentsCTA: React.FC = () => {
   const { fps } = useVideoConfig();
 
   const entrance = spring({ frame, fps, config: { damping: 12 } });
+  const pulse = Math.sin(frame / 6) * 0.05 + 1;
 
   return (
-    <EmcodeSceneWrapper categoryTag="DEBATE DEV" gridColor={brand.green}>
+    <EmcodeSceneWrapper categoryTag="DEBATE & COMUNIDAD" gridColor={brand.green}>
       {/* 1. TOP ZONE: Massive Title Banner */}
       <div
         style={{
@@ -19,7 +20,7 @@ export const Scene4CommentsCTA: React.FC = () => {
           backdropFilter: "blur(14px)",
           border: `4px solid ${brand.green}`,
           borderRadius: 32,
-          padding: "40px 30px",
+          padding: "36px 30px",
           width: "100%",
           textAlign: "center",
           boxShadow: `0 20px 60px rgba(0,0,0,0.7), ${brand.glowGreen}`,
@@ -31,7 +32,7 @@ export const Scene4CommentsCTA: React.FC = () => {
         <div
           style={{
             fontFamily: brand.fontSans,
-            fontSize: 74,
+            fontSize: 70,
             fontWeight: 950,
             color: brand.cream,
             lineHeight: 1.15,
@@ -46,33 +47,33 @@ export const Scene4CommentsCTA: React.FC = () => {
       <div
         style={{
           width: "100%",
-          background: "rgba(10, 20, 40, 0.85)",
+          background: "rgba(10, 20, 40, 0.9)",
           backdropFilter: "blur(16px)",
           border: `3px solid ${brand.green}`,
           borderRadius: 32,
-          padding: "44px 32px",
+          padding: "40px 30px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          gap: 30,
+          gap: 28,
           boxShadow: `0 20px 50px rgba(0,0,0,0.7), ${brand.glowGreen}44`,
           transform: `scale(${entrance})`,
           opacity: entrance,
           boxSizing: "border-box",
         }}
       >
-        <EmcodeLogo size={88} showText={true} tagline="SOFTWARE ENGINEERING & CLOUD ARCHITECTURE" />
+        <EmcodeLogo size={84} showText={true} tagline="DEVOPS & CLOUD ARCHITECTURE" />
 
-        <div style={{ width: "100%", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+        <div style={{ width: "100%", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
           <div
             style={{
-              background: "rgba(239, 68, 68, 0.1)",
-              border: `2px solid ${brand.red}66`,
+              background: "rgba(239, 68, 68, 0.12)",
+              border: `2px solid ${brand.red}88`,
               borderRadius: 20,
-              padding: "24px 16px",
+              padding: "22px 14px",
               textAlign: "center",
               fontFamily: brand.fontMono,
-              fontSize: 26,
+              fontSize: 24,
               fontWeight: 900,
               color: brand.red,
               textShadow: brand.glowRed,
@@ -82,19 +83,20 @@ export const Scene4CommentsCTA: React.FC = () => {
           </div>
           <div
             style={{
-              background: "rgba(0, 255, 65, 0.1)",
-              border: `2px solid ${brand.green}66`,
+              background: "rgba(0, 255, 65, 0.12)",
+              border: `2px solid ${brand.green}88`,
               borderRadius: 20,
-              padding: "24px 16px",
+              padding: "22px 14px",
               textAlign: "center",
               fontFamily: brand.fontMono,
-              fontSize: 26,
+              fontSize: 24,
               fontWeight: 900,
               color: brand.green,
               textShadow: brand.glowGreen,
+              transform: `scale(${pulse})`,
             }}
           >
-            [2] Linux Nativo
+            [2] Linux Nativo 🔥
           </div>
         </div>
       </div>
@@ -104,8 +106,8 @@ export const Scene4CommentsCTA: React.FC = () => {
         style={{
           border: `3px dashed ${brand.green}`,
           borderRadius: 26,
-          padding: "26px 35px",
-          backgroundColor: "rgba(0, 255, 65, 0.08)",
+          padding: "24px 35px",
+          backgroundColor: "rgba(0, 255, 65, 0.1)",
           width: "100%",
           textAlign: "center",
           boxSizing: "border-box",
@@ -113,8 +115,11 @@ export const Scene4CommentsCTA: React.FC = () => {
           opacity: entrance,
         }}
       >
-        <div style={{ fontFamily: brand.fontMono, fontSize: 32, fontWeight: 900, color: brand.green, textShadow: brand.glowGreen }}>
-          👇 ¡TE LEO EN LOS COMENTARIOS! 💬
+        <div style={{ fontFamily: brand.fontMono, fontSize: 30, fontWeight: 900, color: brand.green, textShadow: brand.glowGreen }}>
+          👇 ¡DÉJAMELO EN LOS COMENTARIOS! 💬
+        </div>
+        <div style={{ fontFamily: brand.fontSans, fontSize: 20, color: brand.cream, marginTop: 8, fontWeight: 700 }}>
+          Y sígueme para más contenido de arquitectura y Linux
         </div>
       </div>
     </EmcodeSceneWrapper>

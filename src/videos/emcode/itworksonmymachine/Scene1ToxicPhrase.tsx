@@ -8,9 +8,10 @@ export const Scene1ToxicPhrase: React.FC = () => {
   const { fps } = useVideoConfig();
 
   const entrance = spring({ frame, fps, config: { damping: 12 } });
+  const shake = frame > 40 && frame < 80 ? Math.sin(frame * 0.8) * 6 : 0;
 
   return (
-    <EmcodeSceneWrapper categoryTag="CULTURA DEV" gridColor={brand.red}>
+    <EmcodeSceneWrapper categoryTag="CULTURA DEVOPS" gridColor={brand.red}>
       {/* 1. TOP ZONE: Massive Title Banner */}
       <div
         style={{
@@ -22,7 +23,7 @@ export const Scene1ToxicPhrase: React.FC = () => {
           width: "100%",
           textAlign: "center",
           boxShadow: `0 20px 60px rgba(0,0,0,0.7), ${brand.glowRed}`,
-          transform: `scale(${entrance})`,
+          transform: `scale(${entrance}) translateX(${shake}px)`,
           opacity: entrance,
           boxSizing: "border-box",
         }}
@@ -30,18 +31,18 @@ export const Scene1ToxicPhrase: React.FC = () => {
         <div
           style={{
             fontFamily: brand.fontSans,
-            fontSize: 70,
+            fontSize: 68,
             fontWeight: 950,
             color: brand.cream,
             lineHeight: 1.15,
             letterSpacing: "-2px",
           }}
         >
-          La frase más <span style={{ color: brand.red, textShadow: brand.glowRed }}>tóxica</span> del desarrollo 🚩
+          ¿En tu máquina <span style={{ color: brand.green, textShadow: brand.glowGreen }}>sí funciona</span> pero en producción <span style={{ color: brand.red, textShadow: brand.glowRed }}>se cae? 🤡</span>
         </div>
       </div>
 
-      {/* 2. MIDDLE ZONE: Giant Warning Callout (Takes 650px) */}
+      {/* 2. MIDDLE ZONE: Giant Warning Callout */}
       <div
         style={{
           width: "100%",
@@ -49,7 +50,7 @@ export const Scene1ToxicPhrase: React.FC = () => {
           backdropFilter: "blur(20px)",
           border: `3px solid ${brand.red}`,
           borderRadius: 32,
-          padding: "60px 40px",
+          padding: "50px 35px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -62,11 +63,15 @@ export const Scene1ToxicPhrase: React.FC = () => {
         }}
       >
         <div style={{ fontFamily: brand.fontMono, fontSize: 26, fontWeight: 900, color: brand.red, letterSpacing: 4 }}>
-          [ ERROR 500 EN PRODUCCIÓN ]
+          [ ANTI-PATRÓN N° 1 ]
         </div>
 
-        <div style={{ fontFamily: brand.fontSans, fontSize: 56, fontWeight: 900, color: brand.cream, lineHeight: 1.2 }}>
-          "Pero en mi máquina sí funciona..."
+        <div style={{ fontFamily: brand.fontSans, fontSize: 52, fontWeight: 900, color: brand.cream, lineHeight: 1.25 }}>
+          "En mi máquina sí funciona..."
+        </div>
+
+        <div style={{ fontFamily: brand.fontMono, fontSize: 30, color: brand.orange, fontWeight: 800 }}>
+          🛑 ¡Esa frase ya no es una excusa!
         </div>
       </div>
 
@@ -76,7 +81,7 @@ export const Scene1ToxicPhrase: React.FC = () => {
           background: "rgba(10, 20, 40, 0.8)",
           border: `2px solid ${brand.red}66`,
           borderRadius: 24,
-          padding: "26px 35px",
+          padding: "24px 35px",
           width: "100%",
           textAlign: "center",
           boxSizing: "border-box",
@@ -84,8 +89,8 @@ export const Scene1ToxicPhrase: React.FC = () => {
           opacity: entrance,
         }}
       >
-        <div style={{ fontFamily: brand.fontSans, fontSize: 34, fontWeight: 800, color: brand.cream, lineHeight: 1.35 }}>
-          Si depende del entorno local para correr, <span style={{ color: brand.red, fontWeight: 900 }}>tu backend está roto.</span>
+        <div style={{ fontFamily: brand.fontSans, fontSize: 32, fontWeight: 800, color: brand.cream, lineHeight: 1.35 }}>
+          Descubre los <span style={{ color: brand.red, fontWeight: 900 }}>3 errores silenciosos</span> que rompen tus despliegues.
         </div>
       </div>
     </EmcodeSceneWrapper>

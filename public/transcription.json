@@ -1,0 +1,103 @@
+{
+  "text": " De esa rolla de Windows, Déjame decirte porque cambiar el Linux fue la mejor decisión técnica de mi carrera. En Windows, vivía aprendiendo con Docker. Por ejemplo, viendo unas dos llegas de RAM, rutas con barras invertidas que rompían scripts de noot, y aunque no sé para hacer nada, los servidores donde en realidad va a correr de tu código en producción. Entonces, comenzé a utilizar Linux, en mi caso, \"Mangar o Arch Linux\". Doke, por ejemplo, corre de forma nativa sin capas de virtualización pesadas, la terminal de patch, vuela y todo lo que pruebas en local se comporta exactamente igual que un cluster de AWS y tú sigues programando en Windows, hoy hayas listo el salto al link, lejam menos comentarios y siguen para más contenido de",
+  "chunks": [
+    {
+      "timestamp": [
+        0,
+        1.8
+      ],
+      "text": " De esa rolla de Windows,"
+    },
+    {
+      "timestamp": [
+        1.8,
+        4.16
+      ],
+      "text": " Déjame decirte porque cambiar el Linux"
+    },
+    {
+      "timestamp": [
+        4.16,
+        6.72
+      ],
+      "text": " fue la mejor decisión técnica de mi carrera."
+    },
+    {
+      "timestamp": [
+        7.92,
+        10.92
+      ],
+      "text": " En Windows, vivía aprendiendo con Docker."
+    },
+    {
+      "timestamp": [
+        10.92,
+        12.08
+      ],
+      "text": " Por ejemplo,"
+    },
+    {
+      "timestamp": [
+        12.08,
+        14.64
+      ],
+      "text": " viendo unas dos llegas de RAM,"
+    },
+    {
+      "timestamp": [
+        14.64,
+        18.56
+      ],
+      "text": " rutas con barras invertidas que rompían scripts de noot,"
+    },
+    {
+      "timestamp": [
+        18.56,
+        21.56
+      ],
+      "text": " y aunque no sé para hacer nada,"
+    },
+    {
+      "timestamp": [
+        21.56,
+        25.96
+      ],
+      "text": " los servidores donde en realidad va a correr de tu código en producción."
+    },
+    {
+      "timestamp": [
+        25.96,
+        32
+      ],
+      "text": " Entonces, comenzé a utilizar Linux, en mi caso, \"Mangar o Arch Linux\"."
+    },
+    {
+      "timestamp": [
+        32,
+        37.68
+      ],
+      "text": " Doke, por ejemplo, corre de forma nativa sin capas de virtualización pesadas,"
+    },
+    {
+      "timestamp": [
+        37.68,
+        42.96
+      ],
+      "text": " la terminal de patch, vuela y todo lo que pruebas en local se comporta"
+    },
+    {
+      "timestamp": [
+        42.96,
+        46
+      ],
+      "text": " exactamente igual que un cluster de AWS"
+    },
+    {
+      "timestamp": [
+        46,
+        54
+      ],
+      "text": " y tú sigues programando en Windows, hoy hayas listo el salto al link, lejam menos comentarios y siguen para más contenido de"
+    }
+  ]
+}
