@@ -21,6 +21,8 @@ Motor programático de generación y renderizado de videos en formato vertical (
   - **Zona Inferior:** Conclusión técnica de alto impacto y llamado a la acción (CTA) para comentarios o guardados.
 - 💻 **Syntax Highlighting & Mockups Nativos:** Bloques de código con zoom dinámico (`ZoomCodeBlock`), terminales Linux/macOS y mascotas vectoriales de Manjaro, Docker, AWS y Terraform.
 - ⏱️ **Ritmo Cómodo de Lectura (~30s a 35s):** Cada escena cuenta con una duración pausada (7s a 10s) para garantizar la lectura de todo el código y explicaciones técnicas.
+- 📜 **Manual de Guiones Estandarizado:** Plantilla oficial paso a paso en [GUION_README.md](file:///home/miguel/Documents/Emcode/Videos/migueldev11-reels/GUION_README.md).
+- 🎙️ **Teleprompter / Locución de Videos:** Lo que vas a decir palabra por palabra en [GUIONES_VOZ_EN_OFF.md](file:///home/miguel/Documents/Emcode/Videos/migueldev11-reels/GUIONES_VOZ_EN_OFF.md).
 
 ---
 
