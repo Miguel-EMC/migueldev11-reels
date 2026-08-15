@@ -1,8 +1,13 @@
 import { Config } from "@remotion/cli/config";
+import { enableTailwind } from "@remotion/tailwind";
 import fs from "fs";
 
 Config.setVideoImageFormat("jpeg");
 Config.setOverwriteOutput(true);
+
+Config.overrideWebpackConfig((currentConfiguration) => {
+  return enableTailwind(currentConfiguration);
+});
 
 // Automatically detect local Chrome/Chromium to prevent Headless Shell download issues on NTFS partitions
 const paths = [
@@ -19,4 +24,3 @@ for (const path of paths) {
     break;
   }
 }
-

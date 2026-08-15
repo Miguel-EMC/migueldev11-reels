@@ -60,7 +60,13 @@ import { McpVideo, MCP_TOTAL_FRAMES } from "./videos/mcp/McpVideo";
 import { ExtensionsVideo, EXTENSIONS_TOTAL_FRAMES } from "./videos/extensions/ExtensionsVideo";
 import { FactoryVideo, FACTORY_TOTAL_FRAMES } from "./videos/factory/FactoryVideo";
 import { VIDEO_SCRIPTS } from "./videos/factory/scriptsData";
-
+import "./index.css";
+import { FastAPIArchitectureReel, FASTAPI_ARCH_TOTAL_FRAMES } from "./videos/emcode/FastAPIArchitectureReel";
+import { TerraformIaCVideo, TERRAFORM_IAC_TOTAL_FRAMES } from "./videos/emcode/TerraformIaCVideo";
+import { ServerlessAgentVideo, SERVERLESS_AGENT_TOTAL_FRAMES } from "./videos/emcode/ServerlessAgentVideo";
+import { WhyLeftWindowsVideo, WHY_LEFT_WINDOWS_TOTAL_FRAMES } from "./videos/emcode/WhyLeftWindowsVideo";
+import { KillingItWorksOnMyMachineVideo, KILLING_IT_WORKS_TOTAL_FRAMES } from "./videos/emcode/KillingItWorksOnMyMachineVideo";
+import { TestAwsNoCreditCardVideo, TEST_AWS_NO_CARD_TOTAL_FRAMES } from "./videos/emcode/TestAwsNoCreditCardVideo";
 loadInter();
 loadJetBrains();
 
@@ -68,6 +74,56 @@ const totalFrames = tips.length * FRAMES_PER_TIP;
 
 export const RemotionRoot: React.FC = () => (
   <>
+    {/* EMCODE Viral Kinetic TikTok / Reel Compositions */}
+    <Composition
+      id="EmcodeWhyLeftWindows"
+      component={WhyLeftWindowsVideo}
+      durationInFrames={WHY_LEFT_WINDOWS_TOTAL_FRAMES}
+      fps={30}
+      width={1080}
+      height={1920}
+    />
+    <Composition
+      id="EmcodeKillingItWorks"
+      component={KillingItWorksOnMyMachineVideo}
+      durationInFrames={KILLING_IT_WORKS_TOTAL_FRAMES}
+      fps={30}
+      width={1080}
+      height={1920}
+    />
+    <Composition
+      id="EmcodeTestAwsNoCard"
+      component={TestAwsNoCreditCardVideo}
+      durationInFrames={TEST_AWS_NO_CARD_TOTAL_FRAMES}
+      fps={30}
+      width={1080}
+      height={1920}
+    />
+    <Composition
+      id="EmcodeTerraformIaC"
+      component={TerraformIaCVideo}
+      durationInFrames={TERRAFORM_IAC_TOTAL_FRAMES}
+      fps={30}
+      width={1080}
+      height={1920}
+    />
+    <Composition
+      id="EmcodeServerlessAgent"
+      component={ServerlessAgentVideo}
+      durationInFrames={SERVERLESS_AGENT_TOTAL_FRAMES}
+      fps={30}
+      width={1080}
+      height={1920}
+    />
+    <Composition
+      id="EmcodeFastApiPipeline"
+      component={FastAPIArchitectureReel}
+      durationInFrames={FASTAPI_ARCH_TOTAL_FRAMES}
+      fps={30}
+      width={1080}
+      height={1920}
+    />
+
     <Composition id="CarruselTerraform" component={CarruselTerraform} durationInFrames={8} fps={30} width={1080} height={1350} />
     <Composition id="CarruselLinuxVsWindows" component={CarruselLinuxVsWindows} durationInFrames={8} fps={30} width={1080} height={1350} />
     <Composition id="CarruselProyectosEntrevista" component={CarruselProyectosEntrevista} durationInFrames={8} fps={30} width={1080} height={1350} />

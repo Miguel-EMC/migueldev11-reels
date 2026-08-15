@@ -32,18 +32,29 @@
     "render:novela": "npx remotion render src/index.ts NovelaFrutas out/novela-frutas.mp4 --codec=h264",
     "render:mcp": "npx remotion render src/index.ts McpVideo out/mcp-video.mp4 --codec=h264",
     "render:extensions": "npx remotion render src/index.ts ExtensionsVideo out/extensions-video.mp4 --codec=h264",
-    "render:vectordb": "npx remotion render src/index.ts ConceptsCap2 out/vector-database.mp4 --codec=h264"
+    "render:vectordb": "npx remotion render src/index.ts ConceptsCap2 out/vector-database.mp4 --codec=h264",
+    "render:emcode-fastapi": "npx remotion render src/index.ts EmcodeFastApiPipeline out/emcode-fastapi-pipeline.mp4 --codec=h264",
+    "render:emcode-terraform": "npx remotion render src/index.ts EmcodeTerraformIaC out/emcode-terraform-iac.mp4 --codec=h264",
+    "render:emcode-serverless": "npx remotion render src/index.ts EmcodeServerlessAgent out/emcode-serverless-agent.mp4 --codec=h264",
+    "render:emcode-windows": "npx remotion render src/index.ts EmcodeWhyLeftWindows out/emcode-why-left-windows.mp4 --codec=h264",
+    "render:emcode-killing-it-works": "npx remotion render src/index.ts EmcodeKillingItWorks out/emcode-killing-it-works.mp4 --codec=h264",
+    "render:emcode-test-aws": "npx remotion render src/index.ts EmcodeTestAwsNoCard out/emcode-test-aws-no-card.mp4 --codec=h264"
   },
   "dependencies": {
     "@react-three/drei": "^9.122.0",
     "@react-three/fiber": "^8.18.0",
     "@remotion/cli": "4.0.479",
     "@remotion/google-fonts": "4.0.479",
+    "@remotion/lottie": "^4.0.479",
+    "@remotion/paths": "^4.0.479",
+    "@remotion/tailwind": "^4.0.479",
     "@remotion/three": "^4.0.479",
     "@remotion/transitions": "4.0.479",
+    "lottie-web": "^5.13.0",
     "lucide-react": "^1.21.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
+    "react-syntax-highlighter": "^16.1.1",
     "remotion": "4.0.479",
     "three": "^0.184.0",
     "zod": "4.3.6"
@@ -52,7 +63,11 @@
     "@remotion/eslint-config": "4.0.479",
     "@types/react": "18.3.1",
     "@types/react-dom": "18.3.1",
+    "@types/react-syntax-highlighter": "^15.5.13",
     "@types/three": "^0.184.1",
+    "autoprefixer": "^10.5.4",
+    "postcss": "^8.5.26",
+    "tailwindcss": "^3.4.17",
     "typescript": "5.4.5"
   },
   "remotion": {

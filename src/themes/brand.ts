@@ -12,6 +12,8 @@ export const brand = {
   glowGreen: "0 0 12px #00FF41, 0 0 30px #00FF4166",
   glowOrange: "0 0 12px #FF7A1A, 0 0 30px #FF7A1A66",
   glowCyan:   "0 0 10px #22D3EE, 0 0 24px #22D3EE55",
+  red: "#EF4444",
+  glowRed: "0 0 12px #EF4444, 0 0 30px #EF444466",
   
   // Kinetic audio sync beats (in frame indices at 30 fps)
   // 112.5 BPM corresponds to a beat exactly every 16 frames.
