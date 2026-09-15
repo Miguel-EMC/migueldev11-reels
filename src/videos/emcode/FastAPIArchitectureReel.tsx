@@ -87,9 +87,13 @@ export const FastAPIArchitectureReel: React.FC = () => {
           />
         </div>
       </Sequence>
-
       {/* Scene 2: FastAPI Implementation (160 to 260 frames) */}
-      <Sequence from={160} durationInFrames={100}>
+      <Sequence
+        from={160}
+        durationInFrames={100}
+        style={{
+          translate: "5.1px 378.7px"
+        }}>
         <div className="flex flex-col gap-6 w-full">
           <div className="flex flex-col gap-2">
             <span className="font-mono text-xs text-emerald-400 font-semibold uppercase tracking-wider">
@@ -111,7 +115,6 @@ export const FastAPIArchitectureReel: React.FC = () => {
           />
         </div>
       </Sequence>
-
       {/* Scene 3: Terraform Infrastructure (260 to 360 frames) */}
       <Sequence from={260} durationInFrames={100}>
         <div className="flex flex-col gap-6 w-full">

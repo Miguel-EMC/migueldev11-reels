@@ -28,7 +28,13 @@ export const ClaudeCap1: React.FC = () => {
       {TIME_MAPPING.map((scene, i) => {
         const Comp = SCENE_COMPONENTS[i];
         return (
-          <Sequence key={scene.id} from={scene.from} durationInFrames={scene.duration}>
+          <Sequence
+            key={scene.id}
+            from={scene.from}
+            durationInFrames={scene.duration}
+            style={{
+              translate: "-3.5px -0.2px"
+            }}>
             <Comp />
           </Sequence>
         );

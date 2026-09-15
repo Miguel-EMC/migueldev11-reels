@@ -50,6 +50,8 @@ import { CarruselClaudeCode } from "./videos/carousel/CarruselClaudeCode";
 import { CarruselAgenteAWS } from "./videos/carousel/CarruselAgenteAWS";
 import { CarruselRutaAWS2026 } from "./videos/carousel/CarruselRutaAWS2026";
 import { CarruselRutaAIEngineer } from "./videos/carousel/CarruselRutaAIEngineer";
+import { MotivacionDev } from "./videos/motivacion/MotivacionDev";
+import { CheckpointCarousel, CHECKPOINT_TOTAL_FRAMES } from "./videos/checkpoint/CheckpointCarousel";
 import { MemeWindowsVsLinux } from "./videos/dev3d/MemeWindowsVsLinux";
 import { HackerLinuxVideo } from "./videos/dev3d/HackerLinuxVideo";
 import { ThreeDWorldVideo, THREED_WORLD_TOTAL_FRAMES } from "./videos/dev3d/ThreeDWorldVideo";
@@ -141,6 +143,8 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="CarruselAgenteAWS" component={CarruselAgenteAWS} durationInFrames={8} fps={30} width={1080} height={1350} />
     <Composition id="CarruselRutaAWS2026" component={CarruselRutaAWS2026} durationInFrames={8} fps={30} width={1080} height={1350} />
     <Composition id="CarruselRutaAIEngineer" component={CarruselRutaAIEngineer} durationInFrames={8} fps={30} width={1080} height={1350} />
+    <Composition id="MotivacionDev" component={MotivacionDev} durationInFrames={16} fps={30} width={1080} height={1920} />
+    <Composition id="CheckpointCarousel" component={CheckpointCarousel} durationInFrames={CHECKPOINT_TOTAL_FRAMES} fps={30} width={1080} height={1350} />
     <Composition id="CarruselLinux" component={CarruselLinux} durationInFrames={7} fps={30} width={1080} height={1350} />
     <Composition id="Carrusel" component={Carrusel} durationInFrames={7} fps={30} width={1080} height={1350} />
     <Composition id="VerdadDev2026" component={VerdadDev2026} durationInFrames={960} fps={30} width={1080} height={1920} />

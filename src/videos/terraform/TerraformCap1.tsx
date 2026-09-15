@@ -19,7 +19,13 @@ export const TerraformCap1: React.FC = () => {
       {TF_CAP1_SCENES.map((scene, i) => {
         const Comp = SCENE_COMPONENTS[i];
         return (
-          <Sequence key={scene.id} from={scene.from} durationInFrames={scene.duration}>
+          <Sequence
+            key={scene.id}
+            from={scene.from}
+            durationInFrames={scene.duration}
+            style={{
+              translate: "-7px -0.6px"
+            }}>
             <Comp />
           </Sequence>
         );
